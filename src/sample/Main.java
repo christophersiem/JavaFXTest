@@ -37,9 +37,12 @@ public class Main extends Application {
         Button button2 = new Button("Nooo, go back to other screen");
         button2.setOnAction(event -> window.setScene(scene1));
 
+        Button button3 = new Button("Click me");
+        button3.setOnAction(event -> AlertBox.display("ALERT!!!","Thanks for clicking"));
+
         //Layout 2
         VBox layout2 = new VBox(20);
-        layout2.getChildren().addAll(label2, button2);
+        layout2.getChildren().addAll(label2, button2, button3);
         scene2 = new Scene(layout2, 300, 300);
 
         window.setScene(scene1);
