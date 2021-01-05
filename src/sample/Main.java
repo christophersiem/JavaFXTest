@@ -9,7 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-public class Main extends Application implements EventHandler<ActionEvent> {
+public class Main extends Application{
 
     Button button;
 
@@ -23,11 +23,10 @@ public class Main extends Application implements EventHandler<ActionEvent> {
         button = new Button();
         button.setText("Click me");
 
-        button.setOnAction(this);
+        button.setOnAction(event -> System.out.println("Well done!"));
 
         StackPane layout = new StackPane();
         layout.getChildren().add(button);
-
         Scene scene = new Scene(layout, 300, 250);
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -35,10 +34,5 @@ public class Main extends Application implements EventHandler<ActionEvent> {
     }
 
 
-    @Override
-    public void handle(ActionEvent event) {
-        if(event.getSource() == button){
-            System.out.println("Wow, nice click!");
-        }
-    }
+
 }
